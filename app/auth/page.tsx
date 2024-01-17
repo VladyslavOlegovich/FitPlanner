@@ -14,6 +14,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../utils/auth";
 import { redirect } from "next/navigation";
 import SignInForm from "../components/SignInForm";
+import SignInWithGoogle from "../components/SignInWithGoogle";
 
 export default async function AuthRoute() {
   const session = await getServerSession(authOptions);
@@ -33,7 +34,7 @@ export default async function AuthRoute() {
         <CardContent>
           <div className="flex flex-col">
             <SignInForm />
-
+            <SignInWithGoogle />
             <SigninWithGithub />
           </div>
         </CardContent>
