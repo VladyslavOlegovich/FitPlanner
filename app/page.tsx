@@ -13,7 +13,6 @@ export default async function Home() {
         <div>
           <h2>You are logged in</h2>
           <LogoutButton />
-          <button onClick={() => console.log(session)}>Show session</button>
         </div>
       ) : (
         <div>
