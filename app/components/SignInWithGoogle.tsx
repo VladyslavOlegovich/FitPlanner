@@ -7,8 +7,8 @@ import { signIn } from "next-auth/react";
 export default function SignInWithGoogle() {
   return (
     <Button
-      onClick={() =>
-        signIn("google", {
+      onClick={async () =>
+        await signIn("google", {
           callbackUrl: `${window.location.origin}`,
         })
       }
