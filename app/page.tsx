@@ -6,13 +6,15 @@ import Link from "next/link";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
+  // const { user } = session;
   return (
     <div className="p-10">
       <h1>Public component</h1>
       {session ? (
         <div>
-          <h2>You are logged in</h2>
+          <h2>You are logged in, {session.user?.name}</h2>
           <LogoutButton />
+          <button onClick={() => console.log(session)}>Show session</button>
         </div>
       ) : (
         <div>
